@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Transações</title>
+</head>
+<body>
+    <h1>Histórico de Transações</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Remetente</th>
+                <th>Destinatário</th>
+                <th>Valor</th>
+                <th>Data</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for transaction in transactions %}
+            <tr>
+                <td>{{ transaction.sender_id }}</td>
+                <td>{{ transaction.receiver_id }}</td>
+                <td>{{ transaction.amount }}</td>
+                <td>{{ transaction.date }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
